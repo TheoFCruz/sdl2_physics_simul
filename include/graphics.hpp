@@ -11,10 +11,11 @@ const int SCREEN_HEIGHT = 600;
 class Graphics
 {
 public:
-  Graphics();
-  ~Graphics();
+  Graphics() = default;
+  ~Graphics() = default;
 
   bool initialize();
+  void quit();
 
   void render(PhysicsWorld& world);
 

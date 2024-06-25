@@ -1,5 +1,6 @@
 #include "graphics.hpp"
 
+#include <SDL_render.h>
 #include <iostream>
 
 #include "world.hpp"
@@ -34,15 +35,21 @@ bool Graphics::initialize()
   return true;
 }
 
+void Graphics::quit()
+{
+  SDL_DestroyRenderer(m_renderer);
+  SDL_DestroyWindow(m_window);
+}
+
 void Graphics::render(PhysicsWorld& world)
 {
-  SDL_SetRenderDrawColor(m_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_SetRenderDrawColor(m_renderer, 0x00, 0x00, 0x00, 0xff);
   SDL_RenderClear(m_renderer);
 
-  for (const auto& object : world.getObjects()) 
-  {
-    // Render the object
-  }
+  // for (const auto& object : world.getObjects()) 
+  // {
+  //   // Render the object
+  // }
 
   SDL_RenderPresent(m_renderer);
 }

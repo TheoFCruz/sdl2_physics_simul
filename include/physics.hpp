@@ -4,8 +4,8 @@
 class PhysicsManager
 {
 public:
-  PhysicsManager();
-  ~PhysicsManager();
+  PhysicsManager() = default;
+  ~PhysicsManager() = default;
 
   void update(double dt);
 

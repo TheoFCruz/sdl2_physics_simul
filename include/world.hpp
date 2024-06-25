@@ -10,18 +10,20 @@
 class PhysicsWorld
 {
 public:
-  PhysicsWorld() {}
-  ~PhysicsWorld() {}
+  PhysicsWorld() = default;
+  ~PhysicsWorld() = default;
 
   bool initialize();
+  void quit();
+
   void update(double dt); 
 
-  std::vector<PhysicsObject>& getObjects() { return m_objects; }
+  // std::vector<PhysicsObject>& getObjects() { return m_objects; }
 
 private:
   PhysicsManager m_physics; 
 
-  std::vector<PhysicsObject> m_objects;
+  // std::vector<PhysicsObject> m_objects;
 };
 
 #endif // !PHYSICS_WORLD_H

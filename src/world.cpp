@@ -14,6 +14,11 @@ bool PhysicsWorld::initialize()
   return true;
 }
 
+void PhysicsWorld::quit()
+{
+  SDL_Quit();
+}
+
 void PhysicsWorld::update(double dt)
 {
   // Update each object
