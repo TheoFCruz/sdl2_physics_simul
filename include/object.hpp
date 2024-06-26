@@ -11,8 +11,8 @@ public:
 
   void update(double dt);
 
-  // void applyForce(vec2 force) { m_acceleration += force/m_mass; }
-  // void applyAcceleration(vec2 accel) { m_acceleration += accel; };
+  void applyForce(vec2 force) { m_acceleration += force/m_mass; }
+  void applyAcceleration(vec2 accel) { m_acceleration += accel; };
 
 private:
   float m_radius =  10.0f;

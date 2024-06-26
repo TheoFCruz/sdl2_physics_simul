@@ -1,6 +1,7 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H 
 
+#include "math.hpp"
 #include <SDL.h>
 
 class PhysicsWorld;
@@ -20,6 +21,8 @@ public:
   void render(PhysicsWorld& world);
 
 private:
+  void drawCircle(vec2 position, float radius, SDL_Color color);
+
   SDL_Window* m_window;
   SDL_Renderer* m_renderer;
 };

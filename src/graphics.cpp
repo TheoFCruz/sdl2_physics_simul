@@ -53,3 +53,8 @@ void Graphics::render(PhysicsWorld& world)
 
   SDL_RenderPresent(m_renderer);
 }
+
+void Graphics::drawCircle(vec2 position, float radius, SDL_Color color)
+{
+  // TODO: Implement mid point algorithm
+}
