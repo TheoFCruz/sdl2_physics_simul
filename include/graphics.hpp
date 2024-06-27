@@ -21,7 +21,8 @@ public:
   void render(PhysicsWorld& world);
 
 private:
-  void drawCircle(vec2 position, float radius, SDL_Color color);
+  void drawCircle(vec2 center, float radius, SDL_Color color);
+  void drawFilledCircle(vec2 center, float radius, SDL_Color color);
 
   SDL_Window* m_window;
   SDL_Renderer* m_renderer;
