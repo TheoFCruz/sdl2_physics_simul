@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "world.hpp"
+#include "object.hpp"
 
 bool Graphics::initialize()
 {
@@ -42,16 +43,16 @@ void Graphics::quit()
 
 void Graphics::render(PhysicsWorld& world)
 {
-  SDL_SetRenderDrawColor(m_renderer, 0x00, 0x00, 0x00, 0xff);
+  SDL_SetRenderDrawColor(m_renderer, 0xff, 0xff, 0xff, 0xff);
   SDL_RenderClear(m_renderer);
 
-  // for (const auto& object : world.getObjects()) 
-  // {
-  //   // Render the object
-  // }
+  // Drawing constraint
+  drawFilledCircle(BOUND_CENTER, BOUND_RADIUS, {0x00, 0x00, 0x00, 0xff});
 
-  drawFilledCircle({100,100}, 20, {255,0,100,255});
-  drawCircle({500, 200}, 30, {255,255,255,255});
+  for (PhysicsObject& object : world.getObjects()) 
+  {
+    drawFilledCircle(object.getPosition(), object.getRadius(), object.getColor());
+  }
 
   SDL_RenderPresent(m_renderer);
 }

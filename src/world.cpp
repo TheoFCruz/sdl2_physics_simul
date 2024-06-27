@@ -11,6 +11,8 @@ bool PhysicsWorld::initialize()
     return false;
   }
 
+  m_objects.push_back(PhysicsObject({250,250}));
+
   return true;
 }
 
@@ -21,6 +23,6 @@ void PhysicsWorld::quit()
 
 void PhysicsWorld::update(double dt)
 {
-  // Update each object
   // Update physics manager
+  m_physics.update(dt);
 }

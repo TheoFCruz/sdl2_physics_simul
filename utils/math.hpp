@@ -2,12 +2,17 @@
 #define MATH_H
 
 #include <cassert>
+#include <cmath>
+
 struct vec2
 {
   float x;
   float y;
 
+  vec2(): x(0), y(0) {}
   vec2(float px, float py): x(px), y(py) {}
+
+  float length() { return sqrt(x*x + y*y); }
 
   // Overloads
   

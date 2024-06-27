@@ -7,10 +7,13 @@
 #include "physics.hpp"
 #include "graphics.hpp"
 
+const int BOUND_RADIUS = 250;
+const vec2 BOUND_CENTER = {(float)SCREEN_WIDTH/2, (float)SCREEN_HEIGHT/2};
+
 class PhysicsWorld
 {
 public:
-  PhysicsWorld() = default;
+  PhysicsWorld(): m_physics(*this) {}
   ~PhysicsWorld() = default;
 
   bool initialize();
@@ -18,12 +21,12 @@ public:
 
   void update(double dt); 
 
-  // std::vector<PhysicsObject>& getObjects() { return m_objects; }
+  std::vector<PhysicsObject>& getObjects() { return m_objects; }
 
 private:
   PhysicsManager m_physics; 
 
-  // std::vector<PhysicsObject> m_objects;
+  std::vector<PhysicsObject> m_objects;
 };
 
 #endif // !PHYSICS_WORLD_H
